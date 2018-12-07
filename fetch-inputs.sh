@@ -13,8 +13,6 @@ else
   MAX_DAY=$(TZ=America/New_York date +"%d" | sed "s/^0*//")
 fi
 
-INPUT_URL="https://adventofcode.com/2018/day/7/input"
-
 getResourcePath() {
   local YEAR=$1
   local DAY=$(printf "%02g" $2)
