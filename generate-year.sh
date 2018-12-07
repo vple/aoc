@@ -4,19 +4,19 @@ YEAR=$1
 
 getKotlinPath() {
   local YEAR=$1
-  local DAY=$2
+  local DAY=$(printf "%02g" $2)
   echo "src/main/kotlin/$YEAR/day$DAY"
 }
 
 getResourcePath() {
   local YEAR=$1
-  local DAY=$2
+  local DAY=$(printf "%02g" $2)
   echo "src/main/resources/$YEAR/day$DAY"
 }
 
 generateKotlinBuild() {
   local YEAR=$1
-  local DAY=$2
+  local DAY=$(printf "%02g" $2)
 
   file_text=$(cat << END
 load("@io_bazel_rules_kotlin//kotlin:kotlin.bzl", "kt_jvm_binary")
@@ -41,7 +41,7 @@ END
 
 generateKotlinSolution() {
   local YEAR=$1
-  local DAY=$2
+  local DAY=$(printf "%02g" $2)
   local DAY_TRIMMED=$(echo $DAY | sed "s/^0*//")
 
   file_text=$(cat << END
@@ -71,7 +71,7 @@ END
 
 generateResourceBuild() {
   local YEAR=$1
-  local DAY=$2
+  local DAY=$(printf "%02g" $2)
 
   file_text=$(cat << END
 filegroup(
