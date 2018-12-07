@@ -1,8 +1,6 @@
 #!/bin/bash
 
 YEAR=$1
-KOTLIN_BASE_PATH="src/main/kotlin/$YEAR/"
-echo $KOTLIN_BASE_PATH
 
 getKotlinPath() {
   local YEAR=$1
