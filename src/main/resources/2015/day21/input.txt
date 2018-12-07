@@ -1,1 +1,3 @@
-Puzzle inputs differ by user.  Please log in to get your puzzle input.
+Hit Points: 109
+Damage: 8
+Armor: 2

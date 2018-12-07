@@ -1,1 +1,2 @@
-Puzzle inputs differ by user.  Please log in to get your puzzle input.
+Hit Points: 55
+Damage: 8
