@@ -6,7 +6,7 @@ import util.loadResource
  * [Advent of Code 2017 Day 5](https://adventofcode.com/2017/day/5)
  */
 
-const val INPUT_FILE = "/day05/input.txt"
+const val INPUT_FILE = "/2018/day05/input.txt"
 const val CAPITALIZATION_DIFF = 'a' - 'A'
 
 fun main(args: Array<String>) {

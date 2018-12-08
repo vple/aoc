@@ -6,7 +6,7 @@ import util.loadResource
  * [Advent of Code 2017 Day 4](https://adventofcode.com/2017/day/4)
  */
 
-const val INPUT_FILE = "/day04/input.txt"
+const val INPUT_FILE = "/2018/day04/input.txt"
 const val GUARD_ID_PATTERN = "Guard #(\\d+) begins shift"
 val GUARD_ID_REGEX = Regex(GUARD_ID_PATTERN)
 
