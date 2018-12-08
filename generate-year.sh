@@ -53,7 +53,7 @@ import util.loadResource
  * [Advent of Code $YEAR Day $DAY_TRIMMED](https://adventofcode.com/$YEAR/day/$DAY_TRIMMED)
  */
 
-const val INPUT_FILE = "/day$DAY/input.txt"
+const val INPUT_FILE = "/$YEAR/day$DAY/input.txt"
 
 fun main(args: Array<String>) {
     val input = loadResource(INPUT_FILE)

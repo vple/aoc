@@ -6,7 +6,7 @@ import util.loadResource
  * [Advent of Code 2016 Day 25](https://adventofcode.com/2016/day/25)
  */
 
-const val INPUT_FILE = "/day25/input.txt"
+const val INPUT_FILE = "/2016/day25/input.txt"
 
 fun main(args: Array<String>) {
     val input = loadResource(INPUT_FILE)
