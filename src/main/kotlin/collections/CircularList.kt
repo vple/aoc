@@ -5,8 +5,10 @@ import kotlin.coroutines.experimental.buildIterator
 /**
  * A circular list.
  */
-class CircularList<E> internal constructor(private val backingList: List<E>): List<E> {
-    override val size: Int = backingList.size
+public interface CircularList<E> : List<E> {
+    val backingList: List<E>
+    override val size: Int
+        get() = backingList.size
 
     override fun contains(element: E): Boolean = backingList.contains(element)
 
@@ -47,11 +49,15 @@ class CircularList<E> internal constructor(private val backingList: List<E>): Li
             return backingList.subList(fromIndex, size) + backingList.subList(0, toIndex)
         }
     }
-
-    override fun toString(): String = backingList.toString()
 }
 
 /**
  * Returns a new read-only circular list containing the given [elements].
  */
-fun <T> circularListOf(vararg elements: T): CircularList<T> = CircularList(elements.asList())
+fun <T> circularListOf(vararg elements: T): CircularList<T> = MutableCircularList(elements.asList())
+
+/**
+ * Creates a new read-only circular list with the specified [size], where each element is calculated by calling the specified
+ * [init] function. The [init] function returns a list element given its index.
+ */
+inline fun <T> CircularList(size: Int, init: (index: Int) -> T): CircularList<T> = MutableCircularList(size, init)
