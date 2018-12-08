@@ -17,6 +17,17 @@ data class Coordinate(val x: Int, val y: Int) {
     }
 
     /**
+     * Returns all orthogonal neighboring coordinates.
+     */
+    val orthogonalNeighbors: List<Coordinate> by lazy {
+        mutableListOf(
+            Coordinate(x+1, y),
+            Coordinate(x, y+1),
+            Coordinate(x-1, y),
+            Coordinate(x, y-1))
+    }
+
+    /**
      * Returns the coordinate at (x + [amount], y).
      */
     fun plusX(amount: Int) = Coordinate(x + amount, y)
