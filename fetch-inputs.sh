@@ -16,7 +16,7 @@ fi
 getResourcePath() {
   local YEAR=$1
   local DAY=$(printf "%02g" $2)
-  echo "src/main/resources/$YEAR/day$DAY"
+  echo "src/main/resources/aoc$YEAR/day$DAY"
 }
 
 for DAY in $(seq 1 $MAX_DAY)

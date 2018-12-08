@@ -5,13 +5,13 @@ YEAR=$1
 getKotlinPath() {
   local YEAR=$1
   local DAY=$(printf "%02g" $2)
-  echo "src/main/kotlin/$YEAR/day$DAY"
+  echo "src/main/kotlin/aoc$YEAR/day$DAY"
 }
 
 getResourcePath() {
   local YEAR=$1
   local DAY=$(printf "%02g" $2)
-  echo "src/main/resources/$YEAR/day$DAY"
+  echo "src/main/resources/aoc$YEAR/day$DAY"
 }
 
 generateKotlinBuild() {
@@ -23,7 +23,7 @@ load("@io_bazel_rules_kotlin//kotlin:kotlin.bzl", "kt_jvm_binary")
 
 kt_jvm_binary(
     name = "day$DAY",
-    main_class = "$YEAR.day$DAY.Day${DAY}Kt",
+    main_class = "aoc$YEAR.day$DAY.Day${DAY}Kt",
     srcs = glob(["*.kt"]),
     deps = [
         "//src/main/kotlin/util",
@@ -45,7 +45,7 @@ generateKotlinSolution() {
   local DAY_TRIMMED=$(echo $DAY | sed "s/^0*//")
 
   file_text=$(cat << END
-package \`$YEAR\`.day$DAY
+package aoc$YEAR.day$DAY
 
 import util.loadResource
 
@@ -53,7 +53,7 @@ import util.loadResource
  * [Advent of Code $YEAR Day $DAY_TRIMMED](https://adventofcode.com/$YEAR/day/$DAY_TRIMMED)
  */
 
-const val INPUT_FILE = "/$YEAR/day$DAY/input.txt"
+const val INPUT_FILE = "/aoc$YEAR/day$DAY/input.txt"
 
 fun main(args: Array<String>) {
     val input = loadResource(INPUT_FILE)
