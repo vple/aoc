@@ -22,6 +22,9 @@ getResourcePath() {
 for DAY in $(seq 1 $MAX_DAY)
 do
   TARGET=$(getResourcePath $YEAR $DAY)/input.txt
-  URL="https://adventofcode.com/$YEAR/day/$DAY/input"
-  curl --cookie "session=$AOC_COOKIE" $URL > $TARGET
+  if [ ! -f $TARGET ]; then
+    echo "FETCHING"
+    URL="https://adventofcode.com/$YEAR/day/$DAY/input"
+    curl --cookie "session=$AOC_COOKIE" $URL > $TARGET
+  fi
 done
