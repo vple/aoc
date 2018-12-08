@@ -36,4 +36,14 @@ data class Coordinate(val x: Int, val y: Int) {
      * Returns the coordinate at (x, y + [amount]).
      */
     fun plusY(amount: Int) = Coordinate(x, y + amount)
+
+    /**
+     * Adds [other] to this coordinate.
+     */
+    operator fun plus(other: Coordinate) = Coordinate(x + other.x, y + other.y)
+
+    /**
+     * Subtracts [other] from this coordinate.
+     */
+    operator fun minus(other: Coordinate) = Coordinate(x - other.x, y - other.y)
 }
