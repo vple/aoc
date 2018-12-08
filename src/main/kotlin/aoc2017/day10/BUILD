@@ -7,6 +7,9 @@ kt_jvm_library(
         "//src/main/kotlin/collections",
         "//src/main/kotlin/util",
     ],
+    visibility = [
+        "//src/main/kotlin/aoc2017:__subpackages__",
+    ],
 )
 
 kt_jvm_binary(

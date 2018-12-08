@@ -34,7 +34,10 @@ data class KnotHash(val input: String) {
         }
         denseHash.toList()
     }
-    val hash by lazy {
+    val binaryHash by lazy {
+        denseHash.map { it.toString(2) }.map { it.padStart(8, '0') }.joinToString("")
+    }
+    val hexHash by lazy {
         denseHash.map { it.toString(16) }.map { it.padStart(2, '0') }.joinToString("")
     }
 
