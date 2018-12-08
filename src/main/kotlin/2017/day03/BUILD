@@ -5,6 +5,7 @@ kt_jvm_binary(
     main_class = "2017.day03.Day03Kt",
     srcs = glob(["*.kt"]),
     deps = [
+        "//src/main/kotlin/grid",
         "//src/main/kotlin/util",
     ],
     resources = [
