@@ -1,7 +1,5 @@
 package aoc2015.day04
 
-import util.loadResource
-import java.math.BigInteger
 import java.security.MessageDigest
 
 /**
