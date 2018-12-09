@@ -1,5 +1,7 @@
 package grid
 
+import kotlin.math.abs
+
 data class Coordinate(val x: Int, val y: Int) {
     /**
      * Returns all neighboring coordinates.
@@ -36,6 +38,13 @@ data class Coordinate(val x: Int, val y: Int) {
      * Returns the coordinate at (x, y + [amount]).
      */
     fun plusY(amount: Int) = Coordinate(x, y + amount)
+
+    /**
+     * Returns the manhattan distance from this coordinate to [other].
+     */
+    fun manhattanDistance(other: Coordinate = Coordinate(0, 0)): Int {
+        return abs(x - other.x) + abs(y - other.y)
+    }
 
     /**
      * Adds [other] to this coordinate.
