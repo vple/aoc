@@ -13,9 +13,29 @@ fun main(args: Array<String>) {
     val instructions = input.map { Instruction.parse(it) }
 
     println("Part 1")
-    val program = Program(0, instructions)
-    program.evaluate { false }
-    println(program.instructionCount)
+    val program1 = Program(0, instructions)
+    program1.evaluate { false }
+    println(program1.instructionCount)
 
     println("Part 2")
+    var nonPrimes = 0
+    for (i in 108400..125400 step 17) {
+        if (!isPrime(i)) {
+            nonPrimes++
+        }
+    }
+    println(nonPrimes)
+}
+
+fun isPrime(n: Int): Boolean {
+    require(n > 0)
+    if (n == 2 || n == 3) {
+        return true
+    }
+    for (factor in 2..n/2) {
+        if (n % factor == 0) {
+            return false
+        }
+    }
+    return true
 }
