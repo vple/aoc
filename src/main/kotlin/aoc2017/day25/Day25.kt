@@ -1,6 +1,6 @@
 package aoc2017.day25
 
-import util.loadResource
+import util.loadResourceLines
 
 /**
  * [Advent of Code 2017 Day 25](https://adventofcode.com/2017/day/25)
@@ -9,9 +9,13 @@ import util.loadResource
 const val INPUT_FILE = "/aoc2017/day25/input.txt"
 
 fun main(args: Array<String>) {
-    val input = loadResource(INPUT_FILE)
+    val input = loadResourceLines(INPUT_FILE)
+    val blueprint = Blueprint.parse(input)
 
     println("Part 1")
+    val turingMachine = blueprint.createTuringMachine()
+    turingMachine.step(blueprint.steps)
+    println(turingMachine.diagnosticChecksum)
 
     println("Part 2")
 }
