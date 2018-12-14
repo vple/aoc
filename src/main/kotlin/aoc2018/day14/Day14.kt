@@ -8,9 +8,6 @@ const val INPUT_FILE = "/aoc2018/day14/input.txt"
 
 fun main(args: Array<String>) {
     val input = 290431
-    val initialScoreboard = Scoreboard("37", 0, 1)
-
-    println(scoreUntil(5, initialScoreboard).recipes)
 
     println("Part 1")
     val scores1 = brew { it.size >= input + 10 }
